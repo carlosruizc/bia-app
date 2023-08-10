@@ -1,10 +1,9 @@
 import React from 'react';
 import { BordersComponent, CountryData, CountryDetails, CountryName, DetailedData, FlagBig, TextBlock } from './styles';
 import { ButtonComponent, Data, Button } from '../general/styles';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { MdArrowBack } from 'react-icons/md';
 import BorderingButtons from '../BorderingButtons/BorderingButtons';
-import { SvgIcon } from '@mui/joy';
+
 
 interface Country {
     name: {
