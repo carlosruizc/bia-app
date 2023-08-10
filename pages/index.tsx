@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Layout from '../components/Layout/Layout';
 import CountryList from '../components/CountryList/CountryList';
 import Filters from '../components/Filters/Filters';
-import { fetchCountries } from '../helpers/api';
+import { fetchCountries } from '../utils/api';
 import Details from '../components/Details/Details';
 
 interface Country {
