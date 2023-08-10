@@ -1,7 +1,8 @@
 import React from 'react';
 import Select from "@mui/joy/Select";
 import Option from "@mui/joy/Option";
-import { MdOutlineKeyboardArrowDown } from 'react-icons/md'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { RegionComponent } from './styles';
 
 
@@ -31,7 +32,7 @@ const RegionFilter: React.FC<RegionFilterProps> = ({
                 placeholder="Filter by Region"
                 value={selectedRegion}
                 onChange={handleRegionChange}
-                indicator={<MdOutlineKeyboardArrowDown />}
+                indicator={<FontAwesomeIcon icon={faChevronDown} />}
                 sx={{
                     width: 200, border: "none", boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.05)", background: "var(--secondary)", color: "var(--text)", '&:hover': {
                         background: "var(--secondary)",

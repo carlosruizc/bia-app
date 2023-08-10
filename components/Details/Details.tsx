@@ -1,7 +1,8 @@
 import React from 'react';
 import { BordersComponent, CountryData, CountryDetails, CountryName, DetailedData, FlagBig, TextBlock } from './styles';
 import { ButtonComponent, Data, Button } from '../general/styles';
-import { MdArrowBack } from 'react-icons/md';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import BorderingButtons from '../BorderingButtons/BorderingButtons';
 
 
@@ -53,7 +54,7 @@ const Details: React.FC<DetailsProps> = ({ selectedCountryState, onBackClick, co
                     <Button
                         onClick={onBackClick}
                         className="back-content">
-                        <MdArrowBack />
+                        <FontAwesomeIcon icon={faArrowLeft} />
                         Back
                     </Button>
                 </div>

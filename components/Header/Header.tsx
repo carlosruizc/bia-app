@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { HeaderComponent, Icon, ToggleButton } from './styles';
 import { useTheme } from 'next-themes';
-import { HiOutlineMoon, HiMoon } from 'react-icons/hi';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMoon } from '@fortawesome/free-solid-svg-icons'
+import { faMoon as faMoonLine } from '@fortawesome/free-regular-svg-icons'
 
 const Header: React.FC = () => {
     const [mounted, setMounted] = useState(false)
@@ -26,7 +27,7 @@ const Header: React.FC = () => {
                     setTheme(theme === 'light' ? 'dark' : 'light');
                     setIsDarkMode(!isDarkMode)
                 }}>
-                <Icon>{isDarkMode ? <HiOutlineMoon /> : <HiMoon />}</Icon>
+                <Icon>{isDarkMode ? <FontAwesomeIcon icon={faMoonLine} /> : <FontAwesomeIcon icon={faMoon} />}</Icon>
                 {isDarkMode ? 'Light Mode' : 'Dark Mode'}
             </ToggleButton>
         </HeaderComponent>
