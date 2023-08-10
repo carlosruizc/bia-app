@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { AppProps } from 'next/app';
-import { Nunito_Sans } from "next/font/google"
+import { Nunito_Sans } from 'next/font/google'
 import { createGlobalStyle } from 'styled-components'
 import { ThemeProvider } from 'next-themes'
 
@@ -28,23 +28,21 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const nunitoSans = Nunito_Sans({
-    weight: ["300", "600", "800"],
-    subsets: ['latin'],
+  weight: ["300", "600", "800"],
+  subsets: ['latin'],
 })
 
-
-
 function MyApp({ Component, pageProps }: AppProps) {
-    return (
-        <>
-            <GlobalStyle />
-            <ThemeProvider >
-                <main className={nunitoSans.className}>
-                    <Component {...pageProps} />
-                </main>
-            </ThemeProvider>
-        </>
-    );
+  return (
+    <>
+      <GlobalStyle />
+      <ThemeProvider >
+        <main className={nunitoSans.className}>
+          <Component {...pageProps} />
+        </main>
+      </ThemeProvider>
+    </>
+  );
 }
 
 export default MyApp;
