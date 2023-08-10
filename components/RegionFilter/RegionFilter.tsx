@@ -2,6 +2,8 @@ import React from 'react';
 import Select from "@mui/joy/Select";
 import Option from "@mui/joy/Option";
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md'
+import { RegionComponent } from './styles';
+
 
 interface RegionFilterProps {
     regions: string[];
@@ -24,13 +26,18 @@ const RegionFilter: React.FC<RegionFilterProps> = ({
     };
 
     return (
-        <div>
+        <RegionComponent>
             <Select
                 placeholder="Filter by Region"
                 value={selectedRegion}
                 onChange={handleRegionChange}
                 indicator={<MdOutlineKeyboardArrowDown />}
-                sx={{ width: 200, border: "none", boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.05)", backgroundColor: "hsl(0, 0%, 100%)" }}
+                sx={{
+                    width: 200, border: "none", boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.05)", background: "var(--secondary)", color: "var(--text)", '&:hover': {
+                        background: "var(--secondary)",
+                        boxShadow: 'inset 0px 0px 4px rgba(0, 0, 0, 0.3)',
+                    },
+                }}
             >
                 <Option value="all">All Regions</Option>
                 {sortedRegions.map((region) => (
@@ -39,9 +46,7 @@ const RegionFilter: React.FC<RegionFilterProps> = ({
                     </Option>
                 ))}
             </Select>
-
-        </div>
-
+        </RegionComponent>
     );
 };
 

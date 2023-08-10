@@ -17,15 +17,11 @@ const SearchCountry: React.FC<SearchCountryProps> = ({
         <div>
             <Input
                 placeholder="Search for a country…"
-
                 startDecorator={<MdSearch />}
-                sx={{ width: 400, border: "none", gap: "10px", padding: "0 20px", boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.05)", backgroundColor: "hsl(0, 0%, 100%)" }}
+                sx={{ maxWidth: 400, border: "none", gap: "10px", padding: "0 20px", boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.05)", backgroundColor: "var(--secondary)", color: "var(--text)" }}
                 onChange={handleSearch}
-
             />
-
         </div>
-
     );
 };
 

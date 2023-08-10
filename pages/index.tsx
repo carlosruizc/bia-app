@@ -1,24 +1,30 @@
 import React, { useState } from 'react';
-import Layout from '../components/Layout';
-import CountryList from '../components/CountryList';
-import Filters from '../components/Filters';
+import Layout from '../components/Layout/Layout';
+import CountryList from '../components/CountryList/CountryList';
+import Filters from '../components/Filters/Filters';
 import { fetchCountries } from '../helpers/api';
-import { CountryDetails, FlagBig } from 'components/StyledComponents';
-import Image from 'next/image';
-import Details from '../components/Details';
-import { Button } from '@mui/joy';
+import Details from '../components/Details/Details';
 
 interface Country {
-    name: { common: string };
+    name: {
+        common: string;
+        nativeName: {
+            [code: string]: {
+                official: string;
+                common: string;
+            };
+        };
+    };
     population: number;
     region: string;
     subregion: string;
     capital: string;
-    topLevelDomain: string[];
+    tld: string[];
     currencies: { [code: string]: { name: string } };
     languages: { [code: string]: string };
     flags: { svg: string };
     borders: string[];
+    cca3: string;
 }
 
 interface HomePageProps {
@@ -67,7 +73,11 @@ const HomePage: React.FC<HomePageProps> = ({ countries }) => {
 
                         <div>
 
-                            <Details selectedCountry={selectedCountry} onBackClick={() => setSelectedCountry(null)} />
+                            <Details
+                                selectedCountryState={[selectedCountry, setSelectedCountry]}
+                                onBackClick={() => setSelectedCountry(null)}
+                                countries={countries}
+                            />
                         </div>
                     </>
 

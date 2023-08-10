@@ -1,7 +1,7 @@
 import React from 'react';
-import RegionFilter from './RegionFilter';
-import SearchCountry from './SearchCountry';
-import { FiltersComponent } from './StyledComponents';
+import RegionFilter from '../RegionFilter/RegionFilter';
+import SearchCountry from '../SearchCountry/SearchCountry';
+import { FiltersComponent } from './styles';
 
 interface FilterProps {
     regions: string[];
@@ -28,8 +28,6 @@ const Filters: React.FC<FilterProps> = ({
                 onRegionChange={onRegionChange}
             />
         </FiltersComponent>
-
-
     )
 }
 

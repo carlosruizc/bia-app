@@ -1,19 +1,27 @@
-// components/CountryList.tsx
 import React from 'react';
-import CountryCard from './CountryCard';
-import { StyledCountryList } from './StyledComponents';
+import CountryCard from '../CountryCard/CountryCard';
+import { CountryListComponent } from './styles';
 
 interface Country {
-    name: { common: string };
+    name: {
+        common: string;
+        nativeName: {
+            [code: string]: {
+                official: string;
+                common: string;
+            };
+        };
+    };
     population: number;
     region: string;
     subregion: string;
     capital: string;
-    topLevelDomain: string[];
+    tld: string[];
     currencies: { [code: string]: { name: string } };
     languages: { [code: string]: string };
     flags: { svg: string };
     borders: string[];
+    cca3: string;
 }
 
 interface CountryListProps {
@@ -23,7 +31,7 @@ interface CountryListProps {
 
 const CountryList: React.FC<CountryListProps> = ({ countries, setSelectedCountry }) => {
     return (
-        <StyledCountryList>
+        <CountryListComponent>
             {countries.map((country, index) => (
                 <CountryCard
                     key={index}
@@ -31,7 +39,7 @@ const CountryList: React.FC<CountryListProps> = ({ countries, setSelectedCountry
                     setSelectedCountry={setSelectedCountry}
                 />
             ))}
-        </StyledCountryList>
+        </CountryListComponent>
     );
 };
 
